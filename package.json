@@ -1,0 +1,41 @@
+{
+  "name": "reactweb-cli",
+  "version": "0.0.1",
+  "description": "a toolkit for single page applications",
+  "main": "lib/index.js",
+  "bin": {
+    "reactweb": "bin/reactweb",
+    "reactweb-init": "bin/reactweb-init"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luzuoquan/reactweb-cli.git"
+  },
+  "keywords": [
+    "web",
+    "application",
+    "toolkit"
+  ],
+  "author": "luzuoquan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luzuoquan/reactweb-cli/issues"
+  },
+  "homepage": "https://github.com/luzuoquan/reactweb-cli#readme",
+  "devDependencies": {
+    "commander": "^2.9.0"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "commander": "^2.9.0",
+    "download-git-repo": "^1.0.1",
+    "inquirer": "^3.0.6",
+    "ora": "^1.2.0",
+    "rimraf": "^2.6.1",
+    "tildify": "^1.2.0",
+    "user-home": "^2.0.0"
+  }
+}
