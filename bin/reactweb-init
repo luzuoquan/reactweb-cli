@@ -10,6 +10,7 @@ var tildify = require('tildify')
 var chalk = require('chalk')
 var inquirer = require('inquirer')
 var rm = require('rimraf').sync
+var generate = require('../lib/generate')
 
 var localPath = require('../lib/local-path')
 
@@ -41,7 +42,7 @@ var name = inPlace ? path.relative('../', process.cwd()) : rawName
 var to = path.resolve(rawName || '.')
 var clone = program.clone || false
 
-var tmp = path.join(home, '.vue-templates', template.replace(/\//g, '-'))
+var tmp = path.join(home, 'luzuoquan-templates', template.replace(/\//g, '-'))
 
 console.log()
 process.on('exit', function () {
@@ -89,6 +90,23 @@ function run() {
 		}
 	}else {
 		var officialTemplate = 'luzuoquan/react-redux-react-router-antd-toolkit'
-		// downloadAndGenerate(officialTemplate)
+		downloadAndGenerate(officialTemplate)
 	}
 }
+
+
+function downloadAndGenerate(template) {
+	var spinner = ora('downloading template')
+  	spinner.start()
+
+  	if (exists(tmp)) rm(tmp)
+
+  	download(template, tmp, { clone: clone }, function (err) {
+  		spinner.stop()
+  		if (err) logger.fatal('Failed to download repo ' + template + ': ' + err.message.trim())
+  	})
+}
+
+
+
+
